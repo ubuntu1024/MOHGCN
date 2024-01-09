@@ -160,14 +160,6 @@ def train_test(data_folder, view_list, num_class,
         adj_parameter = [10,0.9,0.08]
         dim_he_list = [400,300,200]
         out_feat = 500
-    if data_folder == 'LGG':
-        adj_parameter = [8,0.8,0.08]
-        dim_he_list = [500,400,300]
-        out_feat = 500
-    if data_folder == 'KIPAN':
-        adj_parameter = [3,0.3,0.08]
-        dim_he_list = [300,200,100]
-        out_feat = 300
     data_tr_list, data_trte_list, trte_idx, labels_trte,gen_gen_adj = prepare_trte_data(data_folder, view_list)
     labels_tr_tensor = torch.LongTensor(labels_trte[trte_idx["tr"]])
     onehot_labels_tr_tensor = one_hot_tensor(labels_tr_tensor, num_class)
@@ -199,22 +191,6 @@ def train_test(data_folder, view_list, num_class,
             model_dict["C2"].load_state_dict(torch.load("./model/BRCA/1/BRCA_C2.pth"))
             model_dict["C3"].load_state_dict(torch.load("./model/BRCA/1/BRCA_C3.pth"))
             model_dict["Fus"].load_state_dict(torch.load("./model/BRCA/1/BRCA_Fus.pth"))
-        if data_folder == 'LGG':
-            model_dict["E1"].load_state_dict(torch.load("./model/LGG/1/LGG_E1.pth"))
-            model_dict["E2"].load_state_dict(torch.load("./model/LGG/1/LGG_E2.pth"))
-            model_dict["E3"].load_state_dict(torch.load("./model/LGG/1/LGG_E3.pth"))
-            model_dict["C1"].load_state_dict(torch.load("./model/LGG/1/LGG_C1.pth"))
-            model_dict["C2"].load_state_dict(torch.load("./model/LGG/1/LGG_C2.pth"))
-            model_dict["C3"].load_state_dict(torch.load("./model/LGG/1/LGG_C3.pth"))
-            model_dict["Fus"].load_state_dict(torch.load("./model/LGG/1/LGG_Fus.pth"))
-        if data_folder == 'KIPAN':
-            model_dict["E1"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_E1.pth"))
-            model_dict["E2"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_E2.pth"))
-            model_dict["E3"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_E3.pth"))
-            model_dict["C1"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_C1.pth"))
-            model_dict["C2"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_C2.pth"))
-            model_dict["C3"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_C3.pth"))
-            model_dict["Fus"].load_state_dict(torch.load("./model/KIPAN/1/KIPAN_Fus.pth"))
         for m in model_dict:
             if cuda:
                 model_dict[m].cuda()
