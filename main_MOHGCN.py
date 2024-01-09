@@ -1,4 +1,4 @@
-""" Example for MOSGAT classification
+""" Example for MOHGCN classification
 """
 from train_test import train_test
 
@@ -17,10 +17,6 @@ if __name__ == "__main__":
         num_class = 2
     if data_folder == 'BRCA':
         num_class = 5
-    if data_folder == 'LGG':
-        num_class = 2
-    if data_folder == 'KIPAN':
-        num_class = 3
     
 train_test(data_folder, view_list, num_class,
                lr_e_pretrain, lr_e, testonly,
