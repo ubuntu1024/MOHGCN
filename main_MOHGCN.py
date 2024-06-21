@@ -4,14 +4,14 @@ from train_test import train_test
 
 
 if __name__ == "__main__":    
-    data_folder = 'ROSMAP'
+    data_folder = 'BRCA'
     testonly = True
     view_list = [1,2,3]
     lr_e_pretrain = 5e-4
     lr_e = 5e-4
     lr_c = 1e-4
     num_epoch_pretrain = 500
-    num_epoch = 1000
+    num_epoch = 1200
     
     if data_folder == 'ROSMAP':
         num_class = 2
