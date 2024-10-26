@@ -15,5 +15,8 @@ You can get the result by running main_MOHGCN.py.
 In order to fully investigate the recent state of the art in multi-omics data fusion research, we compare a total of 15 existing computational approaches. In addition to the common machine learning methods, the latest deep learning method code links are as follows:
 MOGAT:https://github.com/txWang/MOGONET;   
 Dynamic:https://github.com/TencentAILabHealthcare/mmdynamics;  
+DPNET:https://github.com/obananas/DPNET;    
+HyperTMO:https://github.com/ippousyuga/HyperTMO.
+
 
 
